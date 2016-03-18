@@ -1,0 +1,150 @@
+@import "compass";
+
+$background_color: #000;
+$text: #fff;
+$melon_orange:#ff9376;
+$blank: #333333;
+
+body{
+overflow: hidden;
+}
+
+#background {
+    z-index: -2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: $background_color;
+    @include background-origin(border-box);
+    @include background-size(cover);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    #canvas {
+        z-index: -10;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    svg{
+      position: absolute;
+      z-index: -1;
+
+      .svg_rotate1{
+        transform-origin: center;
+        animation : 20s
+        cubic-bezier(0.28, 0.01, 0.76, 0.99) 0s normal none infinite running rotating;
+        transition: 2s smooth;
+      }
+
+      .svg_rotate2{
+        transform-origin: center;
+        animation : 30s
+        cubic-bezier(0, 0.3, 1, 0.67) 0s normal none infinite running rotating;
+        transition: 2s smooth;
+      }
+
+      @keyframes rotating {
+      0% { transform: rotate(0deg); }
+      50% { transform: scale(180deg); }
+      100% { transform: rotate(360deg); }
+      }
+    }
+
+}
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
+}
+
+.cp_logo{
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.padding_top{
+  padding-top: 5%;
+}
+
+#main{
+
+}
+
+/*====Footer====*/
+#header{
+  height: 80px;
+  padding: 8%;
+  width: 100%;
+  ul{
+    position: absolute;;
+    list-style: none;
+    li{
+      display: inline;
+    }
+  }
+}
+
+/*====Subscribe====*/
+#mail{
+.subscribe{
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+input{
+  background: transparent;
+  border: none;
+  border-style: none;
+  border-shadow: none;
+  border-bottom: 1px $blank solid !important;
+}
+
+input[placeholder]{
+  text-align: center;
+}
+
+input:focus{
+  background: none;
+  border-style: none;
+  border-shadow: none;
+}
+
+.word_scatter {
+  height: 100%;
+ li {
+  display: inline;
+  position: absolute;
+}
+}
+
+.moving_humanity{
+  color: $melon_orange;
+  position: relative;
+  z-index: -1;
+  height: 100%;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+  transition: all 5s ease-in;
+  p{
+  padding: 50px;
+  }
+}
+}
+
+/*====Mouse light====*/
+.mouse_light
+{
+  width: 800px;
+  height: 800px;
+  position : absolute;
+  z-index: -1;
+  background: -moz-radial-gradient(
+  50% 50%, circle, rgba(230,230,230,0.6) 1px, rgba(120,120,120,0) 400px);
+}
