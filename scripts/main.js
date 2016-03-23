@@ -1,3 +1,4 @@
+/*
 $(function () {
   $("li").each(function (i, elt) {
     $(elt).css({
@@ -11,6 +12,7 @@ $('.subscribe').hover(
        function(){ $('#scatter_toggle').removeClass('word_scatter') },
        function(){ $('#scatter_toggle').addClass('word_scatter') }
 );
+*/
 
 var t0 = new TimelineMax({onComplete:onRepeat})
 
@@ -44,9 +46,9 @@ var nav = (!document.all || window.opera);
 var tmr = null;
 var spd = 50;
 var x = 0;
-var x_offset = -400;
+var x_offset = -350;
 var y = 0;
-var y_offset = -400;
+var y_offset = -350;
 
 document.onmousemove = get_mouse;
 
@@ -63,9 +65,9 @@ function beam(n)
 {
   if(n<5)
   {
-				document.getElementById('div'+n).style.top=y+'px'
-				document.getElementById('div'+n).style.left=x+'px'
-				document.getElementById('div'+n).style.visibility='visible'
+				document.getElementById('div'+n).style.top=y+'px';
+				document.getElementById('div'+n).style.left=x+'px';
+				document.getElementById('div'+n).style.visibility='visible';
     n++;
     tmr=setTimeout("beam("+n+")",spd);
   }
@@ -86,3 +88,29 @@ function fade(n)
   }
   else clearTimeout(tmr);
 }
+
+//Type.js
+$(function(){
+    $(".moving_humanity").typed({
+      strings: ["HOLDING THE VISION", "MOVING HUMANITY."],
+      typeSpeed: 150
+    });
+});
+
+//Equalizer-toggle
+$('.equalizer').click(function(){
+  if($('span').hasClass('bar-1'))
+    {
+      $('.equalizer span').removeClass('bar-1 bar-2 bar-3 bar-4').addClass('equalizer-nopop');
+    }
+   else
+     {
+       $('.equalizer span:nth-of-type(1)').addClass('bar-1').removeClass('equalizer-nopop');
+       $('.equalizer span:nth-of-type(2)').addClass('bar-2').removeClass('equalizer-nopop');
+       $('.equalizer span:nth-of-type(3)').addClass('bar-3').removeClass('equalizer-nopop');
+       $('.equalizer span:nth-of-type(4)').addClass('bar-4').removeClass('equalizer-nopop')
+     }
+});
+
+
+//Background-music

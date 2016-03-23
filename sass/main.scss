@@ -1,12 +1,23 @@
 @import "compass";
 
-$background_color: #000;
+$background_color: #aaa;
 $text: #fff;
 $melon_orange:#ff9376;
 $blank: #333333;
+$bars: #fff;
+$social_hover: #000;
+$social_bg: #fff;
 
 body{
+color: $text;
 overflow: hidden;
+}
+
+a{
+  color: $text;
+  text-decoration:none;
+  font-family: PTMono;
+  transition: all 0.4s ease-in;
 }
 
 #background {
@@ -14,7 +25,7 @@ overflow: hidden;
     position: absolute;
     width: 100%;
     height: 100%;
-    background: $background_color;
+    background: transparent;
     @include background-origin(border-box);
     @include background-size(cover);
     background-position: center;
@@ -30,17 +41,17 @@ overflow: hidden;
     svg{
       position: absolute;
       z-index: -1;
-
+      top: -5%;
       .svg_rotate1{
         transform-origin: center;
-        animation : 20s
+        animation : 35s
         cubic-bezier(0.28, 0.01, 0.76, 0.99) 0s normal none infinite running rotating;
         transition: 2s smooth;
       }
 
       .svg_rotate2{
         transform-origin: center;
-        animation : 30s
+        animation : 40s
         cubic-bezier(0, 0.3, 1, 0.67) 0s normal none infinite running rotating;
         transition: 2s smooth;
       }
@@ -77,15 +88,33 @@ overflow: hidden;
 
 /*====Footer====*/
 #header{
-  height: 80px;
-  padding: 8%;
-  width: 100%;
-  ul{
-    position: absolute;;
-    list-style: none;
-    li{
-      display: inline;
-    }
+    padding: 50px;
+    height: 100%;
+    width: 100%;
+  .social_links_div{
+    width: 100%;
+    display: inline-block;;
+    position: fixed;
+    left: 0;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+  }
+
+  .social_links {
+  	margin: 2em;
+  	padding-top: 2px;
+  	padding-bottom: 2px;
+  	padding-left: 7px;
+  	padding-right: 7px;
+  }
+
+  a{
+    &:hover{
+    text-decoration: none;
+    color: $social_hover;
+    border-radius: 2px;
+    background: $social_bg;
+  }
   }
 }
 
@@ -129,14 +158,68 @@ input:focus{
   z-index: -1;
   height: 100%;
   margin: 0 auto;
-  display: inline-block;
+  width: 100%;
   text-align: center;
-  transition: all 5s ease-in;
-  p{
   padding: 50px;
   }
 }
+
+/*====Equalizer===*/
+@keyframes hop {
+	0% {
+		height: 0;
+  }
+
+	50% {
+		height: 12px;
+  }
+
+	100% {
+		height: 5px;
+  }
 }
+
+@mixin equalize($number) {
+	animation: hop #{$number}s ease-in infinite;
+}
+
+.equalizer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -14px;
+  height: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.equalizer-item {
+	display: inline-block;
+	background: $bars;
+	width: 2px;
+	height: 10px;
+}
+
+.equalizer-nopop {
+	height: 2px;
+}
+
+.bar-1 {
+	@include equalize(.5);
+}
+
+.bar-2 {
+	@include equalize(.9);
+}
+
+.bar-3 {
+	@include equalize(.7);
+}
+
+.bar-4{
+  @include equalize(.6);
+}
+
 
 /*====Mouse light====*/
 .mouse_light
@@ -145,6 +228,8 @@ input:focus{
   height: 800px;
   position : absolute;
   z-index: -1;
-  background: -moz-radial-gradient(
-  50% 50%, circle, rgba(230,230,230,0.6) 1px, rgba(120,120,120,0) 400px);
+  background: -webkit-radial-gradient(rgba(255,255,255,0.3), rgba(200,200,200,0), rgba(150,150,150,0)); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(rgba(255,255,255,0.3), rgba(200,200,200,0), rgba(150,150,150,0)); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(rgba(255,255,255,0.3), rgba(200,200,200,0), rgba(150,150,150,0)); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(rgba(255,255,255,0.3), rgba(200,200,200,0), rgba(150,150,150,0)); /* Standard syntax */
 }

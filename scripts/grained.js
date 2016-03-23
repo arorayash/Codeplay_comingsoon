@@ -8,7 +8,7 @@ var patternSize = 100,
     patternScaleX = 1,
     patternScaleY = 1,
     patternRefreshInterval = 10,
-    patternAlpha = 20; // int between 0 and 255,
+    patternAlpha = 50; // int between 0 and 255,
 
 var patternPixelDataLength = patternSize * patternSize * 4,
     patternCanvas,

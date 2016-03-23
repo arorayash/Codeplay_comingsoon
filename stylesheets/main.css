@@ -1,15 +1,24 @@
-/* line 8, ../sass/main.scss */
+/* line 11, ../sass/main.scss */
 body {
+  color: #fff;
   overflow: hidden;
 }
 
-/* line 12, ../sass/main.scss */
+/* line 16, ../sass/main.scss */
+a {
+  color: #fff;
+  text-decoration: none;
+  font-family: PTMono;
+  transition: all 0.4s ease-in;
+}
+
+/* line 23, ../sass/main.scss */
 #background {
   z-index: -2;
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #000;
+  background: transparent;
   -moz-background-origin: border;
   -o-background-origin: border-box;
   -webkit-background-origin: border;
@@ -21,28 +30,29 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
-/* line 23, ../sass/main.scss */
+/* line 34, ../sass/main.scss */
 #background #canvas {
   z-index: -10;
   position: absolute;
   width: 100%;
   height: 100%;
 }
-/* line 30, ../sass/main.scss */
+/* line 41, ../sass/main.scss */
 #background svg {
   position: absolute;
   z-index: -1;
+  top: -5%;
 }
-/* line 34, ../sass/main.scss */
+/* line 45, ../sass/main.scss */
 #background svg .svg_rotate1 {
   transform-origin: center;
-  animation: 20s cubic-bezier(0.28, 0.01, 0.76, 0.99) 0s normal none infinite running rotating;
+  animation: 35s cubic-bezier(0.28, 0.01, 0.76, 0.99) 0s normal none infinite running rotating;
   transition: 2s smooth;
 }
-/* line 41, ../sass/main.scss */
+/* line 52, ../sass/main.scss */
 #background svg .svg_rotate2 {
   transform-origin: center;
-  animation: 30s cubic-bezier(0, 0.3, 1, 0.67) 0s normal none infinite running rotating;
+  animation: 40s cubic-bezier(0, 0.3, 1, 0.67) 0s normal none infinite running rotating;
   transition: 2s smooth;
 }
 @keyframes rotating {
@@ -56,13 +66,13 @@ body {
     transform: rotate(360deg);
   }
 }
-/* line 57, ../sass/main.scss */
+/* line 68, ../sass/main.scss */
 .col-centered {
   float: none;
   margin: 0 auto;
 }
 
-/* line 62, ../sass/main.scss */
+/* line 73, ../sass/main.scss */
 .cp_logo {
   width: 300px;
   max-width: 100%;
@@ -71,36 +81,51 @@ body {
   display: block;
 }
 
-/* line 70, ../sass/main.scss */
+/* line 81, ../sass/main.scss */
 .padding_top {
   padding-top: 5%;
 }
 
 /*====Footer====*/
-/* line 79, ../sass/main.scss */
+/* line 90, ../sass/main.scss */
 #header {
-  height: 80px;
-  padding: 8%;
+  padding: 50px;
+  height: 100%;
   width: 100%;
 }
-/* line 83, ../sass/main.scss */
-#header ul {
-  position: absolute;
-  list-style: none;
+/* line 94, ../sass/main.scss */
+#header .social_links_div {
+  width: 100%;
+  display: inline-block;
+  position: fixed;
+  left: 0;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
 }
-/* line 86, ../sass/main.scss */
-#header ul li {
-  display: inline;
+/* line 103, ../sass/main.scss */
+#header .social_links {
+  margin: 2em;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+/* line 112, ../sass/main.scss */
+#header a:hover {
+  text-decoration: none;
+  color: #000;
+  border-radius: 2px;
+  background: #fff;
 }
 
 /*====Subscribe====*/
-/* line 94, ../sass/main.scss */
+/* line 123, ../sass/main.scss */
 #mail .subscribe {
   width: 50%;
   margin: 0 auto;
   display: block;
 }
-/* line 100, ../sass/main.scss */
+/* line 129, ../sass/main.scss */
 #mail input {
   background: transparent;
   border: none;
@@ -108,47 +133,106 @@ body {
   border-shadow: none;
   border-bottom: 1px #333333 solid !important;
 }
-/* line 108, ../sass/main.scss */
+/* line 137, ../sass/main.scss */
 #mail input[placeholder] {
   text-align: center;
 }
-/* line 112, ../sass/main.scss */
+/* line 141, ../sass/main.scss */
 #mail input:focus {
   background: none;
   border-style: none;
   border-shadow: none;
 }
-/* line 118, ../sass/main.scss */
+/* line 147, ../sass/main.scss */
 #mail .word_scatter {
   height: 100%;
 }
-/* line 120, ../sass/main.scss */
+/* line 149, ../sass/main.scss */
 #mail .word_scatter li {
   display: inline;
   position: absolute;
 }
-/* line 126, ../sass/main.scss */
+/* line 155, ../sass/main.scss */
 #mail .moving_humanity {
   color: #ff9376;
   position: relative;
   z-index: -1;
   height: 100%;
   margin: 0 auto;
-  display: inline-block;
+  width: 100%;
   text-align: center;
-  transition: all 5s ease-in;
-}
-/* line 135, ../sass/main.scss */
-#mail .moving_humanity p {
   padding: 50px;
 }
 
+/*====Equalizer===*/
+@keyframes hop {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 12px;
+  }
+  100% {
+    height: 5px;
+  }
+}
+/* line 186, ../sass/main.scss */
+.equalizer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -14px;
+  height: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* line 196, ../sass/main.scss */
+.equalizer-item {
+  display: inline-block;
+  background: #fff;
+  width: 2px;
+  height: 10px;
+}
+
+/* line 203, ../sass/main.scss */
+.equalizer-nopop {
+  height: 2px;
+}
+
+/* line 207, ../sass/main.scss */
+.bar-1 {
+  animation: hop 0.5s ease-in infinite;
+}
+
+/* line 211, ../sass/main.scss */
+.bar-2 {
+  animation: hop 0.9s ease-in infinite;
+}
+
+/* line 215, ../sass/main.scss */
+.bar-3 {
+  animation: hop 0.7s ease-in infinite;
+}
+
+/* line 219, ../sass/main.scss */
+.bar-4 {
+  animation: hop 0.6s ease-in infinite;
+}
+
 /*====Mouse light====*/
-/* line 142, ../sass/main.scss */
+/* line 225, ../sass/main.scss */
 .mouse_light {
   width: 800px;
   height: 800px;
   position: absolute;
   z-index: -1;
-  background: -moz-radial-gradient(50% 50%, circle, rgba(230, 230, 230, 0.6) 1px, rgba(120, 120, 120, 0) 400px);
+  background: -webkit-radial-gradient(rgba(255, 255, 255, 0.3), rgba(200, 200, 200, 0), rgba(150, 150, 150, 0));
+  /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(rgba(255, 255, 255, 0.3), rgba(200, 200, 200, 0), rgba(150, 150, 150, 0));
+  /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(rgba(255, 255, 255, 0.3), rgba(200, 200, 200, 0), rgba(150, 150, 150, 0));
+  /* For Firefox 3.6 to 15 */
+  background: radial-gradient(rgba(255, 255, 255, 0.3), rgba(200, 200, 200, 0), rgba(150, 150, 150, 0));
+  /* Standard syntax */
 }

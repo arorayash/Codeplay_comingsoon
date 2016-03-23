@@ -12,7 +12,8 @@
   <!--[if IE]>
       <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <![endif]-->
-     <link rel="stylesheet" href="stylesheets/main.css">
+    <link href="fonts/fonts.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/main.css">
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="scripts/TweenMax.min.js"></script>
@@ -26,29 +27,33 @@
          <defs>
          <style>
          .cls-1,.cls-2,.cls-3{fill:none;}
-         .cls-2{stroke:#fff;stroke-width:0.4px;}
+         .cls-2{stroke:#fff;stroke-width:0.55px;}
          .cls-2,.cls-3{stroke-miterlimit:10;}
-         .cls-3{stroke:#fff;stroke-width:0.4px;}
+         .cls-3{stroke:#fff;stroke-width:0.55px;}
          </style>
        </defs>
        <circle class="cls-2" cx="960" cy="540" r="522.5"/>
        <rect class="cls-3 svg_rotate" x="591.6" y="171.6" width="736.81" height="736.81"/>
-       <rect class="cls-3 svg_rotat" x="591.6" y="171.6" width="736.81" height="736.81"/>
+       <rect class="cls-3" x="591.6" y="171.6" width="736.81" height="736.81" transform="translate(-100.66 836.98) rotate(-45)"/>
        <rect class="cls-3 svg_rotate1" x="608.07" y="188.07" width="703.87" height="703.87" transform="translate(-130.85 387.53) rotate(-21.4)"/>
-       <rect class="cls-3 svg_rotate2" x="624.69" y="204.69" width="670.63" height="670.63" transform="translate(-100.66 836.98) rotate(-45)"/>
+       <rect class="cls-3 svg_rotate2" x="624.69" y="204.69" width="670.63" height="670.63" transform="translate(-100.66 836.98) rotate(-4)"/>
      </svg>
      </div>
 
 <section id="header">
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-left">
-    <ul>
-      <li><a href="#">facebook</a></li>
-      <li><a href="">twitter</a></li>
-      <li><a href="">Instagram</a></li>
-    </ul>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="social_links_div">
+        <center>
+          <a href="" class="social_links">TWITTER</a>/
+          <a href="" class="social_links">FACEBOOK</a>/
+          <a href="" class="social_links">INSTAGRAM</a>
+        </center>
+      </div>
     </div>
+  </div>
+  <div class="row">
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
       <div class="music">
     </div>
@@ -69,45 +74,66 @@
 
 <section id="mail">
   <div class="container">
-    <div class="row" style="height: 100px; width: 100%">
+    <div class="row">
       <div class="col-xs-12 col-sm-12 col-centered col-md-12 col-lg-12">
-        <div class="moving_humanity" >
-        <ul id="scatter_toggle" class="word_scatter">
-           <li><p>M</p></li>
-           <li><p>O</p></li>
-           <li><p>V</p></li>
-           <li><p>I</p></li>
-           <li><p>N</p></li>
-           <li><p>G</p></li>
-           <li><p>H</p></li>
-           <li><p>U</p></li>
-           <li><p>M</p></li>
-           <li><p>A</p></li>
-           <li><p>N</p></li>
-           <li><p>I</p></li>
-           <li><p>T</p></li>
-           <li><p>Y</p></li>
-        </ul>
-        </div>
+        <div class="moving_humanity"></div>
       </div>
     </div>
 
        <div class="row">
          <div class="col-xs-12 col-sm-12 col-centered col-md-12 col-lg-12">
            <input class="subscribe" name="email" type="mail" placeholder="Keep Updated"/>
-           <
+
          </div>
        </div>
      </div>
+
+     <div class="row">
+       <div class="col-xs-12 col-sm-12 col-centered col-md-12 col-lg-12">
+         <div class="equalizer" id="mute">
+           <span class="equalizer-item bar-1"></span>
+           <span class="equalizer-item bar-2"></span>
+           <span class="equalizer-item bar-3"></span>
+           <span class="equalizer-item bar-4"></span>
+         </div>
+       </div>
+     </div>
+   </div>
 </section>
+<audio id="bg_music" loop="true" autoplay="true">
+  <source  type="audio/mpeg" src="media/updn.mp3">
+</audio>
+    <script src="scripts/jquery.sublimeSlideshow.js"></script>
+    <script src="scripts/typed.min.js"></script>
+    <script src="scripts/grained.js"></script>
+    <script>
+    var audio = document.getElementById('bg_music');
 
-
-     <script src="scripts/grained.js"></script>
+    document.getElementById('mute').addEventListener('click', function (e)
+    {
+        e = e || window.event;
+        audio.muted = !audio.muted;
+        e.preventDefault();
+    }, false);
+    </script>
+   <script type="text/javascript">
+        $(function(){
+            $.sublime_slideshow({
+                src:[
+                {url:"media/Untitled-2.png"},
+                {url:"media/slide-2.png"},
+                {url:"media/Untitled-1.png"},
+                {url:"media/Untitled-2.png"},
+                {url:"media/Untitled-3.png"},
+                {url:"media/Untitled-4.png"}
+                ],
+                duration:   10 ,
+                fade:       3,
+                scaling:    false,
+                rotating:   false,
+            });
+        });
+      </script>
     <script src="scripts/main.js"></script>
-<script>
-
-
-</script>
-
 </body>
 </html>
