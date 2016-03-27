@@ -1,23 +1,37 @@
 @import "compass";
 
-$background_color: #aaa;
+$background_color: #000;
 $text: #fff;
-$melon_orange:#ff9376;
+$melon_orange:#ff5400;
 $blank: #333333;
-$bars: #fff;
+$bars: #1a1a1a;
 $social_hover: #000;
 $social_bg: #fff;
+$org: #ffb07b;
+
+*{
+  margin: 0;
+  padding: 0;
+}
 
 body{
+width: 100%;
+height: 100%;
 color: $text;
+margin: 0;
+padding: 0;
 overflow: hidden;
+display: block;
+font-family: SourceCodePro200;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
 }
 
 a{
   color: $text;
   text-decoration:none;
   font-family: PTMono;
-  transition: all 0.4s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 #background {
@@ -30,18 +44,23 @@ a{
     @include background-size(cover);
     background-position: center;
     background-repeat: no-repeat;
-
+    
     #canvas {
         z-index: -10;
         position: absolute;
         width: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
         height: 100%;
     }
 
     svg{
       position: absolute;
       z-index: -1;
-      top: -5%;
+      width: 100%;
+      height: auto;
       .svg_rotate1{
         transform-origin: center;
         animation : 35s
@@ -83,18 +102,19 @@ a{
 }
 
 #main{
+    padding: 5vh 0 5vh 0;
 
 }
 
 /*====Footer====*/
 #header{
-    padding: 50px;
-    height: 100%;
-    width: 100%;
+    padding: 5% 0 5% 0 ;
+    height: 100px;
+
   .social_links_div{
     width: 100%;
-    display: inline-block;;
-    position: fixed;
+    display:table-column;
+    position: absolute;
     left: 0;
     font-size: 0.8em;
     letter-spacing: 0.1em;
@@ -120,10 +140,13 @@ a{
 
 /*====Subscribe====*/
 #mail{
+  height: 180px;
+  bottom: 0;
 .subscribe{
   width: 50%;
   margin: 0 auto;
   display: block;
+
 }
 
 input{
@@ -135,15 +158,24 @@ input{
 }
 
 input[placeholder]{
+  color: #1a1a1a;
   text-align: center;
 }
 
-input:focus{
+
+input:focus, input:active{
   background: none;
   border-style: none;
   border-shadow: none;
+  box-shadow: none;
 }
 
+.form-control:focus {
+  border-color: transparent;
+  box-shadow: transparent;
+  border-style: none;
+}
+    
 .word_scatter {
   height: 100%;
  li {
@@ -156,12 +188,16 @@ input:focus{
   color: $melon_orange;
   position: relative;
   z-index: -1;
-  height: 100%;
+  height: 60px;
   margin: 0 auto;
   width: 100%;
   text-align: center;
   padding: 50px;
   }
+}
+
+.typed-cursor{
+  display: none;
 }
 
 /*====Equalizer===*/
@@ -185,10 +221,8 @@ input:focus{
 
 .equalizer {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -10px 0 0 -14px;
-  height: 20px;
+  left: 48%;
+  padding: 15px 0 15px 0;
   overflow: hidden;
   cursor: pointer;
 }
@@ -205,19 +239,19 @@ input:focus{
 }
 
 .bar-1 {
-	@include equalize(.5);
+	@include equalize(1.4);
 }
 
 .bar-2 {
-	@include equalize(.9);
+	@include equalize(1.6);
 }
 
 .bar-3 {
-	@include equalize(.7);
+	@include equalize(1);
 }
 
 .bar-4{
-  @include equalize(.6);
+  @include equalize(1.2);
 }
 
 
@@ -232,4 +266,51 @@ input:focus{
   background: -o-radial-gradient(rgba(255,255,255,0.3), rgba(200,200,200,0), rgba(150,150,150,0)); /* For Opera 11.6 to 12.0 */
   background: -moz-radial-gradient(rgba(255,255,255,0.3), rgba(200,200,200,0), rgba(150,150,150,0)); /* For Firefox 3.6 to 15 */
   background: radial-gradient(rgba(255,255,255,0.3), rgba(200,200,200,0), rgba(150,150,150,0)); /* Standard syntax */
+}
+
+/*===MediaQueries===*/
+
+/* Smartphones (portrait and landscape) ----------- */
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        #main{
+            img{
+            padding-top: 10vh;
+            width: 50%;
+            }
+        }
+         
+    #header{
+    padding-top: 20%;
+    }
+    
+    #mail .subscribe{
+    width: 80%;
+    }
+        svg{
+    display: none;
+    }
+}
+
+@media only screen  and (min-width : 1280px) and (min-height : 900px ){
+    #main{
+    padding: 15vh 0 15vh 0;
+
+}
+
+}
+
+@media only screen  and (min-width : 1824px) {
+    #main{
+    padding: 18vh 0 18vh 0;
+
+}
+}
+
+::selection{
+    background: $org;
+}
+
+#wrap{
+display: block;
+vertical-align: middle;
 }
