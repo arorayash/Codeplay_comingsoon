@@ -1,14 +1,14 @@
-/* line 23, ../sass/main.scss */
+/* line 24, ../sass/main.scss */
 * {
   margin: 0;
   padding: 0;
 }
 
-/* line 28, ../sass/main.scss */
+/* line 29, ../sass/main.scss */
 body {
   width: 100%;
   height: 100%;
-  color: #fff;
+  color: #1a1a1a;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -19,15 +19,15 @@ body {
   letter-spacing: 0.1em;
 }
 
-/* line 42, ../sass/main.scss */
+/* line 43, ../sass/main.scss */
 a {
-  color: #fff;
+  color: #1a1a1a;
   text-decoration: none;
   font-family: PTMono;
   transition: all 0.2s ease-in;
 }
 
-/* line 49, ../sass/main.scss */
+/* line 50, ../sass/main.scss */
 #background {
   z-index: -2;
   position: absolute;
@@ -45,7 +45,7 @@ a {
   background-position: center;
   background-repeat: no-repeat;
 }
-/* line 60, ../sass/main.scss */
+/* line 61, ../sass/main.scss */
 #background #canvas {
   z-index: -10;
   position: absolute;
@@ -56,20 +56,20 @@ a {
   right: 0;
   height: 100%;
 }
-/* line 71, ../sass/main.scss */
+/* line 72, ../sass/main.scss */
 #background svg {
   position: absolute;
   z-index: -1;
   width: 100%;
   height: auto;
 }
-/* line 76, ../sass/main.scss */
+/* line 77, ../sass/main.scss */
 #background svg .svg_rotate1 {
   transform-origin: center;
   animation: 35s cubic-bezier(0.28, 0.01, 0.76, 0.99) 0s normal none infinite running rotating;
   transition: 2s smooth;
 }
-/* line 83, ../sass/main.scss */
+/* line 84, ../sass/main.scss */
 #background svg .svg_rotate2 {
   transform-origin: center;
   animation: 40s cubic-bezier(0, 0.3, 1, 0.67) 0s normal none infinite running rotating;
@@ -86,13 +86,13 @@ a {
     transform: rotate(360deg);
   }
 }
-/* line 99, ../sass/main.scss */
+/* line 100, ../sass/main.scss */
 .col-centered {
   float: none;
   margin: 0 auto;
 }
 
-/* line 104, ../sass/main.scss */
+/* line 105, ../sass/main.scss */
 .cp_logo {
   width: 300px;
   max-width: 100%;
@@ -108,23 +108,23 @@ a {
   user-drag: false;
 }
 
-/* line 113, ../sass/main.scss */
+/* line 114, ../sass/main.scss */
 .padding_top {
   padding-top: 5%;
 }
 
-/* line 117, ../sass/main.scss */
+/* line 118, ../sass/main.scss */
 #main {
   padding: 5vh 0 5vh 0;
 }
 
 /*====Footer====*/
-/* line 122, ../sass/main.scss */
+/* line 123, ../sass/main.scss */
 #header {
   padding: 5% 0 5% 0;
   height: 100px;
 }
-/* line 126, ../sass/main.scss */
+/* line 127, ../sass/main.scss */
 #header .social_links_div {
   width: 100%;
   display: table-column;
@@ -133,7 +133,7 @@ a {
   font-size: 0.8em;
   letter-spacing: 0.1em;
 }
-/* line 135, ../sass/main.scss */
+/* line 136, ../sass/main.scss */
 #header .social_links {
   /*margin: 2em;*/
   padding-top: 2px;
@@ -142,6 +142,10 @@ a {
   padding-right: 7px;
 }
 /* line 144, ../sass/main.scss */
+#header a {
+  color: #fff;
+}
+/* line 146, ../sass/main.scss */
 #header a:hover {
   text-decoration: none;
   color: #000;
@@ -150,18 +154,18 @@ a {
 }
 
 /*====Subscribe====*/
-/* line 154, ../sass/main.scss */
+/* line 156, ../sass/main.scss */
 #mail {
   height: 180px;
   bottom: 0;
 }
-/* line 157, ../sass/main.scss */
+/* line 159, ../sass/main.scss */
 #mail .subscribe {
   width: 50%;
   margin: 0 auto;
   display: block;
 }
-/* line 164, ../sass/main.scss */
+/* line 166, ../sass/main.scss */
 #mail input {
   background: transparent;
   border: none;
@@ -169,25 +173,44 @@ a {
   border-shadow: none;
   border-bottom: 1px #333333 solid !important;
 }
-/* line 172, ../sass/main.scss */
+/* line 174, ../sass/main.scss */
 #mail input[placeholder] {
-  color: #1a1a1a;
   text-align: center;
 }
-/* line 178, ../sass/main.scss */
+/* line 61, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+#mail input[placeholder]:-moz-placeholder {
+  font-family: PTMono;
+  color: #1a1a1a;
+}
+/* line 64, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+#mail input[placeholder]::-moz-placeholder {
+  font-family: PTMono;
+  color: #1a1a1a;
+}
+/* line 67, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+#mail input[placeholder]:-ms-input-placeholder {
+  font-family: PTMono;
+  color: #1a1a1a;
+}
+/* line 56, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+#mail input[placeholder]::-webkit-input-placeholder {
+  font-family: PTMono;
+  color: #1a1a1a;
+}
+/* line 183, ../sass/main.scss */
 #mail input:focus, #mail input:active {
   background: none;
   border-style: none;
   border-shadow: none;
   box-shadow: none;
 }
-/* line 185, ../sass/main.scss */
-#mail .form-control:focus {
+/* line 190, ../sass/main.scss */
+#mail input:focus {
   border-color: transparent;
   box-shadow: transparent;
   border-style: none;
 }
-/* line 191, ../sass/main.scss */
+/* line 196, ../sass/main.scss */
 #mail .submit {
   position: absolute;
   top: -2px;
@@ -197,7 +220,7 @@ a {
   color: #1a1a1a;
   visibility: hidden;
 }
-/* line 201, ../sass/main.scss */
+/* line 206, ../sass/main.scss */
 #mail .moving_humanity {
   color: #ff5400;
   position: relative;
@@ -209,7 +232,7 @@ a {
   /*padding: 50px;*/
 }
 
-/* line 213, ../sass/main.scss */
+/* line 218, ../sass/main.scss */
 .typed-cursor {
   display: none;
 }
@@ -226,7 +249,7 @@ a {
     height: 5px;
   }
 }
-/* line 236, ../sass/main.scss */
+/* line 241, ../sass/main.scss */
 .equalizer {
   position: relative;
   /*left: 48%;
@@ -237,7 +260,7 @@ a {
   text-align: center;
 }
 
-/* line 246, ../sass/main.scss */
+/* line 251, ../sass/main.scss */
 .equalizer-item {
   display: inline-block;
   background: #1a1a1a;
@@ -245,33 +268,33 @@ a {
   height: 10px;
 }
 
-/* line 253, ../sass/main.scss */
+/* line 258, ../sass/main.scss */
 .equalizer-nopop {
   height: 2px;
 }
 
-/* line 257, ../sass/main.scss */
+/* line 262, ../sass/main.scss */
 .bar-1 {
   animation: hop 1.4s ease-in infinite;
 }
 
-/* line 261, ../sass/main.scss */
+/* line 266, ../sass/main.scss */
 .bar-2 {
   animation: hop 1.6s ease-in infinite;
 }
 
-/* line 265, ../sass/main.scss */
+/* line 270, ../sass/main.scss */
 .bar-3 {
   animation: hop 1s ease-in infinite;
 }
 
-/* line 269, ../sass/main.scss */
+/* line 274, ../sass/main.scss */
 .bar-4 {
   animation: hop 1.2s ease-in infinite;
 }
 
 /*====Mouse light====*/
-/* line 275, ../sass/main.scss */
+/* line 280, ../sass/main.scss */
 .mouse_light {
   width: 800px;
   height: 800px;
@@ -290,50 +313,55 @@ a {
 /*===MediaQueries===*/
 /* Smartphones (portrait and landscape) ----------- */
 @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  /* line 292, ../sass/main.scss */
+  /* line 297, ../sass/main.scss */
   #main img {
     padding-top: 10vh;
     width: 50%;
   }
 
-  /* line 298, ../sass/main.scss */
+  /* line 303, ../sass/main.scss */
   #header {
     padding-top: 20%;
   }
 
-  /* line 302, ../sass/main.scss */
+  /* line 307, ../sass/main.scss */
   #mail .subscribe {
     width: 80%;
   }
 
-  /* line 306, ../sass/main.scss */
+  /* line 311, ../sass/main.scss */
   .submit {
     right: 10% !important;
   }
 
-  /* line 309, ../sass/main.scss */
+  /* line 314, ../sass/main.scss */
   svg {
+    display: none;
+  }
+
+  /* line 318, ../sass/main.scss */
+  #div1 {
     display: none;
   }
 }
 @media only screen and (min-width: 1280px) and (min-height: 900px) {
-  /* line 315, ../sass/main.scss */
+  /* line 324, ../sass/main.scss */
   #main {
     padding: 15vh 0 15vh 0;
   }
 }
 @media only screen and (min-width: 1824px) {
-  /* line 323, ../sass/main.scss */
+  /* line 332, ../sass/main.scss */
   #main {
     padding: 18vh 0 18vh 0;
   }
 }
-/* line 329, ../sass/main.scss */
+/* line 338, ../sass/main.scss */
 ::selection {
   background: #ffb07b;
 }
 
-/* line 333, ../sass/main.scss */
+/* line 342, ../sass/main.scss */
 #wrap {
   display: block;
   vertical-align: middle;

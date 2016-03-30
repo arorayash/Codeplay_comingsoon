@@ -1,10 +1,11 @@
 @import "compass";
 
 $background_color: #000;
-$text: #fff;
+$text: #1a1a1a;
 $melon_orange:#ff5400;
 $blank: #333333;
 $bars: #1a1a1a;
+$social: #fff;
 $social_hover: #000;
 $social_bg: #fff;
 $org: #ffb07b;
@@ -35,8 +36,8 @@ overflow: hidden;
 display: block;
 transition: all 1s ease-in;
 font-family: SourceCodePro200;
-    font-size: 0.8em;
-    letter-spacing: 0.1em;
+font-size: 0.8em;
+letter-spacing: 0.1em;
 }
 
 a{
@@ -141,6 +142,7 @@ a{
   }
 
   a{
+    color: $social;
     &:hover{
     text-decoration: none;
     color: $social_hover;
@@ -170,8 +172,11 @@ input{
 }
 
 input[placeholder]{
-  color: #1a1a1a;
   text-align: center;
+  @include input-placeholder {
+    font-family: PTMono;
+    color: #1a1a1a;
+  }
 }
 
 
@@ -182,7 +187,7 @@ input:focus, input:active{
   box-shadow: none;
 }
 
-.form-control:focus {
+input:focus {
   border-color: transparent;
   box-shadow: transparent;
   border-style: none;
@@ -308,6 +313,10 @@ input:focus, input:active{
     }
         svg{
     display: none;
+    }
+
+    #div1{
+      display: none;
     }
 }
 
