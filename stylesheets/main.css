@@ -1,10 +1,10 @@
-/* line 12, ../sass/main.scss */
+/* line 23, ../sass/main.scss */
 * {
   margin: 0;
   padding: 0;
 }
 
-/* line 17, ../sass/main.scss */
+/* line 28, ../sass/main.scss */
 body {
   width: 100%;
   height: 100%;
@@ -13,12 +13,13 @@ body {
   padding: 0;
   overflow: hidden;
   display: block;
+  transition: all 1s ease-in;
   font-family: SourceCodePro200;
   font-size: 0.8em;
   letter-spacing: 0.1em;
 }
 
-/* line 30, ../sass/main.scss */
+/* line 42, ../sass/main.scss */
 a {
   color: #fff;
   text-decoration: none;
@@ -26,7 +27,7 @@ a {
   transition: all 0.2s ease-in;
 }
 
-/* line 37, ../sass/main.scss */
+/* line 49, ../sass/main.scss */
 #background {
   z-index: -2;
   position: absolute;
@@ -44,7 +45,7 @@ a {
   background-position: center;
   background-repeat: no-repeat;
 }
-/* line 48, ../sass/main.scss */
+/* line 60, ../sass/main.scss */
 #background #canvas {
   z-index: -10;
   position: absolute;
@@ -55,20 +56,20 @@ a {
   right: 0;
   height: 100%;
 }
-/* line 59, ../sass/main.scss */
+/* line 71, ../sass/main.scss */
 #background svg {
   position: absolute;
   z-index: -1;
   width: 100%;
   height: auto;
 }
-/* line 64, ../sass/main.scss */
+/* line 76, ../sass/main.scss */
 #background svg .svg_rotate1 {
   transform-origin: center;
   animation: 35s cubic-bezier(0.28, 0.01, 0.76, 0.99) 0s normal none infinite running rotating;
   transition: 2s smooth;
 }
-/* line 71, ../sass/main.scss */
+/* line 83, ../sass/main.scss */
 #background svg .svg_rotate2 {
   transform-origin: center;
   animation: 40s cubic-bezier(0, 0.3, 1, 0.67) 0s normal none infinite running rotating;
@@ -85,38 +86,45 @@ a {
     transform: rotate(360deg);
   }
 }
-/* line 87, ../sass/main.scss */
+/* line 99, ../sass/main.scss */
 .col-centered {
   float: none;
   margin: 0 auto;
 }
 
-/* line 92, ../sass/main.scss */
+/* line 104, ../sass/main.scss */
 .cp_logo {
   width: 300px;
   max-width: 100%;
   height: auto;
   margin: 0 auto;
   display: block;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  user-drag: false;
 }
 
-/* line 100, ../sass/main.scss */
+/* line 113, ../sass/main.scss */
 .padding_top {
   padding-top: 5%;
 }
 
-/* line 104, ../sass/main.scss */
+/* line 117, ../sass/main.scss */
 #main {
   padding: 5vh 0 5vh 0;
 }
 
 /*====Footer====*/
-/* line 110, ../sass/main.scss */
+/* line 122, ../sass/main.scss */
 #header {
   padding: 5% 0 5% 0;
   height: 100px;
 }
-/* line 114, ../sass/main.scss */
+/* line 126, ../sass/main.scss */
 #header .social_links_div {
   width: 100%;
   display: table-column;
@@ -125,15 +133,15 @@ a {
   font-size: 0.8em;
   letter-spacing: 0.1em;
 }
-/* line 123, ../sass/main.scss */
+/* line 135, ../sass/main.scss */
 #header .social_links {
-  margin: 2em;
+  /*margin: 2em;*/
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 7px;
   padding-right: 7px;
 }
-/* line 132, ../sass/main.scss */
+/* line 144, ../sass/main.scss */
 #header a:hover {
   text-decoration: none;
   color: #000;
@@ -142,18 +150,18 @@ a {
 }
 
 /*====Subscribe====*/
-/* line 142, ../sass/main.scss */
+/* line 154, ../sass/main.scss */
 #mail {
   height: 180px;
   bottom: 0;
 }
-/* line 145, ../sass/main.scss */
+/* line 157, ../sass/main.scss */
 #mail .subscribe {
   width: 50%;
   margin: 0 auto;
   display: block;
 }
-/* line 152, ../sass/main.scss */
+/* line 164, ../sass/main.scss */
 #mail input {
   background: transparent;
   border: none;
@@ -161,34 +169,35 @@ a {
   border-shadow: none;
   border-bottom: 1px #333333 solid !important;
 }
-/* line 160, ../sass/main.scss */
+/* line 172, ../sass/main.scss */
 #mail input[placeholder] {
   color: #1a1a1a;
   text-align: center;
 }
-/* line 166, ../sass/main.scss */
+/* line 178, ../sass/main.scss */
 #mail input:focus, #mail input:active {
   background: none;
   border-style: none;
   border-shadow: none;
   box-shadow: none;
 }
-/* line 173, ../sass/main.scss */
+/* line 185, ../sass/main.scss */
 #mail .form-control:focus {
   border-color: transparent;
   box-shadow: transparent;
   border-style: none;
 }
-/* line 179, ../sass/main.scss */
-#mail .word_scatter {
-  height: 100%;
-}
-/* line 181, ../sass/main.scss */
-#mail .word_scatter li {
-  display: inline;
+/* line 191, ../sass/main.scss */
+#mail .submit {
   position: absolute;
+  top: -2px;
+  right: 25%;
+  background: transparent;
+  border: none;
+  color: #1a1a1a;
+  visibility: hidden;
 }
-/* line 187, ../sass/main.scss */
+/* line 201, ../sass/main.scss */
 #mail .moving_humanity {
   color: #ff5400;
   position: relative;
@@ -197,10 +206,10 @@ a {
   margin: 0 auto;
   width: 100%;
   text-align: center;
-  padding: 50px;
+  /*padding: 50px;*/
 }
 
-/* line 199, ../sass/main.scss */
+/* line 213, ../sass/main.scss */
 .typed-cursor {
   display: none;
 }
@@ -217,16 +226,18 @@ a {
     height: 5px;
   }
 }
-/* line 222, ../sass/main.scss */
+/* line 236, ../sass/main.scss */
 .equalizer {
-  position: absolute;
-  left: 48%;
-  padding: 15px 0 15px 0;
+  position: relative;
+  /*left: 48%;
+  padding: 15px 0 15px 0;*/
   overflow: hidden;
   cursor: pointer;
+  margin-top: 20px;
+  text-align: center;
 }
 
-/* line 230, ../sass/main.scss */
+/* line 246, ../sass/main.scss */
 .equalizer-item {
   display: inline-block;
   background: #1a1a1a;
@@ -234,90 +245,95 @@ a {
   height: 10px;
 }
 
-/* line 237, ../sass/main.scss */
+/* line 253, ../sass/main.scss */
 .equalizer-nopop {
   height: 2px;
 }
 
-/* line 241, ../sass/main.scss */
+/* line 257, ../sass/main.scss */
 .bar-1 {
   animation: hop 1.4s ease-in infinite;
 }
 
-/* line 245, ../sass/main.scss */
+/* line 261, ../sass/main.scss */
 .bar-2 {
   animation: hop 1.6s ease-in infinite;
 }
 
-/* line 249, ../sass/main.scss */
+/* line 265, ../sass/main.scss */
 .bar-3 {
   animation: hop 1s ease-in infinite;
 }
 
-/* line 253, ../sass/main.scss */
+/* line 269, ../sass/main.scss */
 .bar-4 {
   animation: hop 1.2s ease-in infinite;
 }
 
 /*====Mouse light====*/
-/* line 259, ../sass/main.scss */
+/* line 275, ../sass/main.scss */
 .mouse_light {
   width: 800px;
   height: 800px;
   position: absolute;
   z-index: -1;
-  background: -webkit-radial-gradient(rgba(255, 255, 255, 0.3), rgba(200, 200, 200, 0), rgba(150, 150, 150, 0));
+  background: -webkit-radial-gradient(rgba(255, 255, 255, 0.6), rgba(200, 200, 200, 0), rgba(150, 150, 150, 0));
   /* Safari 5.1 to 6.0 */
-  background: -o-radial-gradient(rgba(255, 255, 255, 0.3), rgba(200, 200, 200, 0), rgba(150, 150, 150, 0));
+  background: -o-radial-gradient(rgba(255, 255, 255, 0.6), rgba(200, 200, 200, 0), rgba(150, 150, 150, 0));
   /* For Opera 11.6 to 12.0 */
-  background: -moz-radial-gradient(rgba(255, 255, 255, 0.3), rgba(200, 200, 200, 0), rgba(150, 150, 150, 0));
+  background: -moz-radial-gradient(rgba(255, 255, 255, 0.6), rgba(200, 200, 200, 0), rgba(150, 150, 150, 0));
   /* For Firefox 3.6 to 15 */
-  background: radial-gradient(rgba(255, 255, 255, 0.3), rgba(200, 200, 200, 0), rgba(150, 150, 150, 0));
+  background: radial-gradient(rgba(255, 255, 255, 0.6), rgba(200, 200, 200, 0), rgba(150, 150, 150, 0));
   /* Standard syntax */
 }
 
 /*===MediaQueries===*/
 /* Smartphones (portrait and landscape) ----------- */
 @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  /* line 276, ../sass/main.scss */
+  /* line 292, ../sass/main.scss */
   #main img {
     padding-top: 10vh;
     width: 50%;
   }
 
-  /* line 282, ../sass/main.scss */
+  /* line 298, ../sass/main.scss */
   #header {
     padding-top: 20%;
   }
 
-  /* line 286, ../sass/main.scss */
+  /* line 302, ../sass/main.scss */
   #mail .subscribe {
     width: 80%;
   }
 
-  /* line 289, ../sass/main.scss */
+  /* line 306, ../sass/main.scss */
+  .submit {
+    right: 10% !important;
+  }
+
+  /* line 309, ../sass/main.scss */
   svg {
     display: none;
   }
 }
 @media only screen and (min-width: 1280px) and (min-height: 900px) {
-  /* line 295, ../sass/main.scss */
+  /* line 315, ../sass/main.scss */
   #main {
     padding: 15vh 0 15vh 0;
   }
 }
 @media only screen and (min-width: 1824px) {
-  /* line 303, ../sass/main.scss */
+  /* line 323, ../sass/main.scss */
   #main {
     padding: 18vh 0 18vh 0;
   }
 }
-/* line 309, ../sass/main.scss */
+/* line 329, ../sass/main.scss */
 ::selection {
   background: #ffb07b;
 }
 
-/* line 313, ../sass/main.scss */
+/* line 333, ../sass/main.scss */
 #wrap {
   display: block;
   vertical-align: middle;

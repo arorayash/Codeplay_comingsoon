@@ -8,6 +8,17 @@ $bars: #1a1a1a;
 $social_hover: #000;
 $social_bg: #fff;
 $org: #ffb07b;
+$arrow: #1a1a1a;
+
+@mixin no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  user-drag: false;
+}
 
 *{
   margin: 0;
@@ -22,6 +33,7 @@ margin: 0;
 padding: 0;
 overflow: hidden;
 display: block;
+transition: all 1s ease-in;
 font-family: SourceCodePro200;
     font-size: 0.8em;
     letter-spacing: 0.1em;
@@ -44,7 +56,7 @@ a{
     @include background-size(cover);
     background-position: center;
     background-repeat: no-repeat;
-    
+
     #canvas {
         z-index: -10;
         position: absolute;
@@ -95,6 +107,7 @@ a{
   height: auto;
   margin: 0 auto;
   display: block;
+  @include no-select;
 }
 
 .padding_top{
@@ -103,7 +116,6 @@ a{
 
 #main{
     padding: 5vh 0 5vh 0;
-
 }
 
 /*====Footer====*/
@@ -121,7 +133,7 @@ a{
   }
 
   .social_links {
-  	margin: 2em;
+  	/*margin: 2em;*/
   	padding-top: 2px;
   	padding-bottom: 2px;
   	padding-left: 7px;
@@ -175,13 +187,15 @@ input:focus, input:active{
   box-shadow: transparent;
   border-style: none;
 }
-    
-.word_scatter {
-  height: 100%;
- li {
-  display: inline;
+
+.submit{
   position: absolute;
-}
+  top: -2px;
+  right: 25%;
+  background: transparent;
+  border: none;
+  color: $arrow;
+  visibility: hidden;
 }
 
 .moving_humanity{
@@ -192,7 +206,7 @@ input:focus, input:active{
   margin: 0 auto;
   width: 100%;
   text-align: center;
-  padding: 50px;
+  /*padding: 50px;*/
   }
 }
 
@@ -220,11 +234,13 @@ input:focus, input:active{
 }
 
 .equalizer {
-  position: absolute;
-  left: 48%;
-  padding: 15px 0 15px 0;
+  position: relative;
+  /*left: 48%;
+  padding: 15px 0 15px 0;*/
   overflow: hidden;
   cursor: pointer;
+  margin-top: 20px;
+  text-align:center;
 }
 
 .equalizer-item {
@@ -262,10 +278,10 @@ input:focus, input:active{
   height: 800px;
   position : absolute;
   z-index: -1;
-  background: -webkit-radial-gradient(rgba(255,255,255,0.3), rgba(200,200,200,0), rgba(150,150,150,0)); /* Safari 5.1 to 6.0 */
-  background: -o-radial-gradient(rgba(255,255,255,0.3), rgba(200,200,200,0), rgba(150,150,150,0)); /* For Opera 11.6 to 12.0 */
-  background: -moz-radial-gradient(rgba(255,255,255,0.3), rgba(200,200,200,0), rgba(150,150,150,0)); /* For Firefox 3.6 to 15 */
-  background: radial-gradient(rgba(255,255,255,0.3), rgba(200,200,200,0), rgba(150,150,150,0)); /* Standard syntax */
+  background: -webkit-radial-gradient(rgba(255,255,255,0.6), rgba(200,200,200,0), rgba(150,150,150,0)); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(rgba(255,255,255,0.6), rgba(200,200,200,0), rgba(150,150,150,0)); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(rgba(255,255,255,0.6), rgba(200,200,200,0), rgba(150,150,150,0)); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(rgba(255,255,255,0.6), rgba(200,200,200,0), rgba(150,150,150,0)); /* Standard syntax */
 }
 
 /*===MediaQueries===*/
@@ -278,13 +294,17 @@ input:focus, input:active{
             width: 50%;
             }
         }
-         
+
     #header{
     padding-top: 20%;
     }
-    
+
     #mail .subscribe{
     width: 80%;
+    }
+
+    .submit{
+      right: 10%!important;
     }
         svg{
     display: none;

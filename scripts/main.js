@@ -65,35 +65,25 @@ function beam(n)
 {
   if(n<5)
   {
-				document.getElementById('div'+n).style.top=y+'px';
-				document.getElementById('div'+n).style.left=x+'px';
-				document.getElementById('div'+n).style.visibility='visible';
+				document.getElementById('div1').style.top=y+'px';
+				document.getElementById('div1').style.left=x+'px';
+				document.getElementById('div1').style.visibility='visible';
     n++;
     tmr=setTimeout("beam("+n+")",spd);
   }
   else
   {
      clearTimeout(tmr);
-     fade(4);
   }
 }
 
-function fade(n)
-{
-  if(n>0)
-  {
-				document.getElementById('div'+n).style.visibility='hidden'
-    n--;
-    tmr=setTimeout("fade("+n+")",spd);
-  }
-  else clearTimeout(tmr);
-}
+
 
 //Type.js
 $(function(){
     $(".moving_humanity").typed({
       strings: ["HOLDING THE VISION", "MOVING HUMANITY."],
-      typeSpeed: 150
+      typeSpeed: 180
     });
 });
 
@@ -114,3 +104,9 @@ $('.equalizer').click(function(){
 
 
 //Background-music
+
+
+//show submit
+$('input').on('focus', function(){
+  $('.submit').css('visibility','visible');
+})
