@@ -65,6 +65,11 @@ a {
   transition: all 0.2s ease-in;
 }
 
+a:hover{
+  text-decoration: none;
+  color: #000000;
+}
+
 /* line 50, ../sass/main.scss */
 #background {
   z-index: -2;

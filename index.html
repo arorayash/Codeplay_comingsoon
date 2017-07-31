@@ -20,6 +20,25 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="scripts/TweenMax.min.js"></script>
 
+    <style>
+        .enter
+        {
+            text-decoration: none;
+            color: #ffffff;
+            border-radius: 2.5px;
+            background: #1a1a1a;
+            padding: 2px;
+         }
+
+        .enter:hover{
+            text-decoration: none;
+            color: #1a1a1a;
+            border-radius: 3px;
+            background: #ffffff;
+            padding: 3px;
+        }
+    </style>
+
     <script>
 		(function(){
 			function id(v){
@@ -35,7 +54,10 @@
 				tot = img.length;
 				function imgLoaded(){
 					c += 1;
-					var perc = ((100/tot*c) << 0) +"%";
+					var perc = 50+"%";
+                    setTimeout(function(){
+                        perc = ((100/tot*c) << 0) +"%";
+                    }, 3200);
 					prog.style.width = perc;
 					stat.innerHTML = "Loading "+ perc;
 					if(c===(tot)) return doneLoading();
@@ -44,11 +66,11 @@
 					document.querySelector("body").classList.remove("preload");
 					setTimeout(function(){
 						ovrl.style.transform = "translateX(100vw)";
-					}, 200);
+					}, 6200);
 					setTimeout(function(){
 						ovrl.style.opacity = 0;
 						ovrl.style.display = "none";
-					}, 1500);
+					}, 6500);
 				}
 				for(var i=0; i<tot; i++) {
 					var tImg     = new Image();
@@ -96,9 +118,9 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="social_links_div">
         <center>
-          <a href="https://twitter.com/csivitu" class="social_links">TWITTER</a>
-          <a href="https://www.facebook.com/csivit/?fref=ts" class="social_links">FACEBOOK</a>
-          <a href="https://www.instagram.com/csivitu/" class="social_links">INSTAGRAM</a>
+          <a href="#" class="social_links">TWITTER</a>
+          <a href="#" class="social_links">FACEBOOK</a>
+          <a href="#" class="social_links">INSTAGRAM</a>
         </center>
       </div>
     </div>
@@ -121,6 +143,9 @@
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-centered col-md-12 col-lg-12">
         <div class="moving_humanity"></div>
+        <div class="text-center" style="padding: 20px 0">
+            <a class="enter" href="">- ENTER -</a>
+        </div>
       </div>
     </div>
     </div>
@@ -145,7 +170,7 @@
 </audio>
 
     <script src="scripts/jquery.sublimeSlideshow.js"></script>
-    <script src="scripts/typed.min.js"></script>
+
     <script src="scripts/grained.js"></script>
     <script>
     var audio = document.getElementById('bg_music');
@@ -161,10 +186,10 @@
         $(function(){
             $.sublime_slideshow({
                 src:[
-                {url:"media/farmer.png"},
-                {url:"media/orphan.png"},
-                {url:"media/military.png"},
-                {url:"media/student.png"}
+                {url:"https://www.dropbox.com/s/wrgokir579sr0w6/farmer.png?dl=1"},
+                {url:"https://www.dropbox.com/s/iguinn76ze09cue/orphan.png?dl=1"},
+                {url:"https://www.dropbox.com/s/kt3q6p3iwakxzqs/military.png?dl=1"},
+                {url:"https://www.dropbox.com/s/criuapxx710r2rq/student.png?dl=1"}
                 ],
                 duration:   10 ,
                 fade:       3,
@@ -175,5 +200,6 @@
       </script>
 
     <script src="scripts/main.js"></script>
+<script src="scripts/typed.min.js"></script>
 </body>
 </html>
